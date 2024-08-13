@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    margin: 20px;
+    border: 2px solid grey;
+    width: 500px;
+    height: 500px;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.img-box{
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.src {
+    width: 450px;
+    height: 450px;
+}
