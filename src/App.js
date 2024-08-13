@@ -26,41 +26,17 @@ const choice = {
 function App() {
 
   const [select, setSelect] = useState('');
-  const [comSelect, setComSelect] = useState('');
-  const [userResult, setUserResult] = useState('');
 
   const play = (userSelect) => {
     setSelect(choice[userSelect]);
-    let comChoice = random();
-    setComSelect(comChoice);
-    setUserResult(judgement(userSelect, comChoice))
+    console.log(select, userSelect)
   }
-
-  const random = () => {
-    let itemArray = Object.keys(choice); // 객체에 있는 key값만 추출해서 Array로 만들어줌
-    let randomItem = Math.floor(Math.random() * itemArray.length);
-    let final = itemArray[randomItem];
-    return choice[final];
-  }
-
-  const judgement = (user, computer) => {
-    if (user === computer.name) {
-      return 'DEFEAT'
-    } else if (user === 'scissors') {
-      return (computer.name === 'rock' ? 'LOSE' : 'WIN');
-    } else if (user === 'rock') {
-      return (computer.name === 'paper' ? 'LOSE' : 'WIN')
-    } else if (user === 'paper') {
-      return (computer.name === 'scissors' ? 'LOSE' : 'WIN')
-    }
-  }
-
 
   return (
     <>
       <div className='main'>
-        <Box title="YOU" item={select} result={userResult} />
-        <Box title="COMPUTER" item={comSelect} result={userResult} />
+        <Box title="YOU" item={select} />
+        <Box title="COMPUTER" item={select} />
       </div>
       <div className='main'>
         <button onClick={() => play('scissors')} className='btn'>가위</button>
